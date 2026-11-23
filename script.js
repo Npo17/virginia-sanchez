@@ -194,13 +194,6 @@
       setOpen(open);
       if (open) gallery.scrollIntoView({ behavior: reducedMotion ? "auto" : "smooth", block: "nearest" });
     });
-
-    // El link "Trabajos" del menú lleva a la sección y abre las fotos.
-    document.querySelectorAll("a[href='#work']").forEach(function (link) {
-      link.addEventListener("click", function () {
-        setOpen(true);
-      });
-    });
   }
 
   initDownloadCv();
