@@ -172,7 +172,39 @@
     });
   }
 
+  // Las fotos quedan detrás de un botón: se muestran solo si el visitante las pide.
+  function initGallery() {
+    var btn = document.getElementById("gallery-toggle");
+    var gallery = document.getElementById("gallery");
+    if (!btn || !gallery) return;
+
+    var label = btn.querySelector(".btn-gallery-label");
+
+    function setOpen(open) {
+      gallery.classList.toggle("is-collapsed", !open);
+      btn.setAttribute("aria-expanded", open ? "true" : "false");
+      if (label) label.textContent = open ? "Ocultar fotos" : "Ver trabajos";
+    }
+
+    btn.hidden = false;
+    setOpen(false);
+
+    btn.addEventListener("click", function () {
+      var open = btn.getAttribute("aria-expanded") !== "true";
+      setOpen(open);
+      if (open) gallery.scrollIntoView({ behavior: reducedMotion ? "auto" : "smooth", block: "nearest" });
+    });
+
+    // El link "Trabajos" del menú lleva a la sección y abre las fotos.
+    document.querySelectorAll("a[href='#work']").forEach(function (link) {
+      link.addEventListener("click", function () {
+        setOpen(true);
+      });
+    });
+  }
+
   initDownloadCv();
+  initGallery();
   initNav();
   initScrollSpy();
   initReveal();

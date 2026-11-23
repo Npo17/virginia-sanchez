@@ -62,7 +62,7 @@
         <li><a href="#about" class="nav-link">Perfil</a></li>
         <li><a href="#path" class="nav-link">Ascenso</a></li>
         <li><a href="#skills" class="nav-link">Técnica</a></li>
-        <li><a href="#work" class="nav-link">Fotos</a></li>
+        <li><a href="#work" class="nav-link">Trabajos</a></li>
         <li><a href="#experience" class="nav-link">Experiencia</a></li>
         <li><a href="#contact" class="nav-link nav-link--cta">Contacto</a></li>
       </ul>
@@ -212,7 +212,14 @@
         <h2 class="center">Mi trabajo</h2>
         <p class="section-subtitle">Del armado al plato terminado.</p>
 
-        <div class="gallery">
+        <div class="gallery-actions">
+          <button type="button" class="btn btn-gallery" id="gallery-toggle" aria-expanded="false" aria-controls="gallery" hidden>
+            <i class="fas fa-images" aria-hidden="true"></i>
+            <span class="btn-gallery-label">Ver trabajos</span>
+          </button>
+        </div>
+
+        <div class="gallery" id="gallery">
           <figure class="gallery-item reveal">
             <img src="assets/trabajo/armado-de-roll.jpg" alt="Armado de un roll sobre la esterilla: arroz, salmón, palta y queso crema" width="675" height="1200" loading="lazy">
             <figcaption>Armado: arroz, salmón, palta y queso crema</figcaption>

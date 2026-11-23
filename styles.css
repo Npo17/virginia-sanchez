@@ -408,7 +408,17 @@ section { position: relative; padding: var(--space-section) 0; scroll-margin-top
 #work h2 { color: #fff; }
 #work .section-subtitle { color: rgba(255, 255, 255, 0.7); }
 
-.gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+#work .section-subtitle { margin-bottom: 1.75rem; }
+.gallery-actions { display: flex; justify-content: center; }
+.btn-gallery { cursor: pointer; border: 0; font-family: inherit; color: var(--ink); background: var(--salmon); }
+.btn-gallery[hidden] { display: none; }
+.btn-gallery:hover { background: #ff906c; box-shadow: 0 14px 36px rgba(242, 122, 84, 0.4); }
+.btn-gallery[aria-expanded="true"] { color: #fff; background: rgba(255, 255, 255, 0.08); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.4); }
+.btn-gallery[aria-expanded="true"]:hover { background: rgba(255, 255, 255, 0.16); }
+
+.gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 2rem; }
+/* Sin JS la galería queda siempre visible; con JS arranca cerrada. */
+.gallery.is-collapsed { display: none; }
 .gallery-item {
   position: relative; margin: 0; overflow: hidden;
   aspect-ratio: 4 / 5; border-radius: var(--radius-lg); background: var(--ink-3);
