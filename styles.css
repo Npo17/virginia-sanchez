@@ -425,6 +425,13 @@ section { position: relative; padding: var(--space-section) 0; scroll-margin-top
 }
 .gallery-item img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s var(--ease); }
 .gallery-item:first-child img { object-position: 50% 92%; }
+.gallery-item--bottom img { object-position: 50% 100%; }
+/* Con 5 fotos en 3 columnas, la segunda fila (2 fotos) queda centrada. */
+@media (min-width: 761px) {
+  .gallery { grid-template-columns: repeat(6, 1fr); }
+  .gallery-item { grid-column: span 2; }
+  .gallery-item:nth-child(4):nth-last-child(2) { grid-column: 2 / span 2; }
+}
 .gallery-item:hover img { transform: scale(1.06); }
 .gallery-item figcaption {
   position: absolute; left: 0; right: 0; bottom: 0;
